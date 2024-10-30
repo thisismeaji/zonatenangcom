@@ -1,0 +1,57 @@
+.nav{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--primary);
+    padding: 1.5rem 1rem;
+}
+
+.logo p{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu span{
+    display: inline-block;
+    width: 1.5rem;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.navMobile{
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    
+    .nav{
+        padding: 1.5rem;
+    }
+
+    .logo p{
+        font-size: 1em;
+    }
+
+    .navDekstop{
+        display: none;
+    }
+
+    .menu{
+        display: flex;
+    }
+
+}
