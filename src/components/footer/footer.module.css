@@ -1,0 +1,25 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.pages a{
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 0.5rem;
+}
+
+.footer p{
+    margin-top: 1rem;
+}

@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation/Navigation"
 import "./globals.css"
+import Footer from "@/components/footer/Footer"
 
 export const metadata = {
   icons: {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
           <Navigation/>
         </header>
         {children}
+        <Footer/>
       </body>
     </html>
   )
