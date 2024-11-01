@@ -11,14 +11,14 @@
 @media (max-width: 568px) {
   .postCard {
     grid-template-columns: 1fr; /* 2 kolom untuk layar tablet */
-    gap: 1.5rem;
+    gap: 3rem;
   }
 }
 
 @media (min-width: 568px) and (max-width: 1200px) {
   .postCard {
     max-width: 800px;
-    gap: 1.5rem;
+    gap: 2rem;
   }
   .postCard {
     grid-template-columns: 1fr 1fr; /* 3 kolom untuk layar lebar */

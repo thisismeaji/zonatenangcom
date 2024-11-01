@@ -19,8 +19,9 @@ const PostCard = ({ date, category, image, title, excerpt, link, linkCategory, }
         <Image 
           src={image} 
           alt={title} 
-          width={700}
-          height={400}
+          width={364}
+          height={213}
+          loading="lazy"
         />
       </div>
       <div className={Styles.postInfo}>
