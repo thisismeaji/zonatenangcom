@@ -1,21 +1,20 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import React from "react";
-import { posts } from "../data/posts";
-import PostCard from "../components/postcard/PostCard";
+import React from 'react';
+import Styles from "../page.module.css";
+import { posts } from "../../data/posts";
+import PostCard from "../../components/postcard/PostCard";
 import Head from "next/head";
 
-// Metadata untuk halaman beranda
+// Metadata untuk halaman kategori Self-Help
 export const metadata = {
-  title: "Zonatenang.com: Tempat Nyaman untuk Kaum Introvert",
+  title: "Self-Help",
   description:
-    "Di sini, kamu para kaum introvert akan menemukan tips praktis, wawasan mendalam, dan inspirasi untuk memperkuat diri tanpa perlu mengubah jati diri.",
-  keywords: "blog, pengembangan diri, tips berguna, inspirasi, introvert",
+    "Temukan cara untuk mengenali diri sendiri, mengatasi rasa cemas, serta membangun rasa kepercayaan diri untuk kalian para kaum introvert.",
+  keywords: "self-help",
   openGraph: {
-    title: "Zonatenang.com: Tempat Nyaman untuk Kaum Introvert",
+    title: "Self-Help",
     description:
-      "Di sini, kamu para kaum introvert akan menemukan tips praktis, wawasan mendalam, dan inspirasi untuk memperkuat diri tanpa perlu mengubah jati diri.",
-    url: "https://zonatenang.com",
+      "Temukan cara untuk mengenali diri sendiri, mengatasi rasa cemas, serta membangun rasa kepercayaan diri untuk kalian para kaum introvert.",
+    url: "https://zonatenang.com/self-help", // Sesuaikan dengan URL yang sebenarnya
     image: "https://zonatenang.com/og-image.jpg",
     type: "website",
     locale: "id_ID",
@@ -23,7 +22,7 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default function SelfHelp() {
   return (
     <>
       <Head>
@@ -36,10 +35,7 @@ export default function Home() {
 
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
+        <meta property="og:description" content={metadata.openGraph.description} />
         <meta property="og:url" content={metadata.openGraph.url} />
         <meta property="og:image" content={metadata.openGraph.image} />
         <meta property="og:site_name" content={metadata.openGraph.site_name} />
@@ -49,14 +45,10 @@ export default function Home() {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.openGraph.title} />
-        <meta
-          name="twitter:description"
-          content={metadata.openGraph.description}
-        />
+        <meta name="twitter:description" content={metadata.openGraph.description} />
         <meta name="twitter:image" content={metadata.openGraph.image} />
 
         <link rel="icon" href="/favicon.png" />
-        <link rel="canonical" href="https://zonatenang.com" /> {/* Meta Canonical */}
 
         {/* Schema Markup untuk Breadcrumb */}
         <script type="application/ld+json">
@@ -70,6 +62,12 @@ export default function Home() {
                   "position": 1,
                   "name": "Home",
                   "item": "https://zonatenang.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Self-Help",
+                  "item": "https://zonatenang.com/self-help"
                 }
               ]
             }
@@ -77,19 +75,21 @@ export default function Home() {
         </script>
       </Head>
       <main>
-        <section className={styles.postCard}>
-          {posts.map((post) => (
-            <PostCard
-              key={post.id}
-              date={post.date}
-              category={post.category}
-              image={post.image}
-              title={post.title}
-              excerpt={post.excerpt}
-              link={post.link}
-              linkCategory={post.linkCategory}
-            />
-          ))}
+        <section className={Styles.postCard}>
+          {posts
+            .filter(post => post.category === 'Self-Help') 
+            .map(post => (
+              <PostCard
+                key={post.id}
+                date={post.date}
+                category={post.category}
+                image={post.image}
+                title={post.title}
+                excerpt={post.excerpt}
+                link={post.link}
+                linkCategory={post.linkCategory}
+              />
+            ))}
         </section>
       </main>
     </>

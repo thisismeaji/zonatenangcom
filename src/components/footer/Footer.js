@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={Styles.socialMedia}>
             <ul>
                 <li>
-                    <Link href="/">
+                    <Link href="https://www.instagram.com/zonatenang.blog/">
                         <Image
                             src="/icons/instagram.png"
                             alt='Instagram Zonatenang.com'
@@ -19,7 +19,7 @@ export default function Footer() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="https://www.facebook.com/profile.php?id=61567763970205">
                         <Image
                             src="/icons/facebook.png"
                             alt='Facebook Zonatenang.com'
@@ -29,7 +29,7 @@ export default function Footer() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="https://www.threads.net/@zonatenang.blog">
                         <Image
                             src="/icons/threads.png"
                             alt='Threads Zonatenang.com'
@@ -39,7 +39,7 @@ export default function Footer() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="https://x.com/zonatenangblog">
                         <Image
                             src="/icons/twitter.png"
                             alt='Twitter Zonatenang.com'

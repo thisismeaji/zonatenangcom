@@ -1,21 +1,18 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import React from "react";
-import { posts } from "../data/posts";
-import PostCard from "../components/postcard/PostCard";
+import React from 'react';
+import Styles from "../page.module.css";
+import { posts } from "../../data/posts";
+import PostCard from "../../components/postcard/PostCard";
 import Head from "next/head";
 
-// Metadata untuk halaman beranda
+// Metadata untuk halaman kategori Hobi dan Minat
 export const metadata = {
-  title: "Zonatenang.com: Tempat Nyaman untuk Kaum Introvert",
-  description:
-    "Di sini, kamu para kaum introvert akan menemukan tips praktis, wawasan mendalam, dan inspirasi untuk memperkuat diri tanpa perlu mengubah jati diri.",
-  keywords: "blog, pengembangan diri, tips berguna, inspirasi, introvert",
+  title: "Hobi dan Minat",
+  description: "Temukan berbagai ide kegiatan mulai dari aktifitas hobi hingga minat yang cocok untuk kalian para kaum introvert sehingga bisa lebih mencintai diri sendiri.",
+  keywords: "hobi, minat, pengembangan diri, tips",
   openGraph: {
-    title: "Zonatenang.com: Tempat Nyaman untuk Kaum Introvert",
-    description:
-      "Di sini, kamu para kaum introvert akan menemukan tips praktis, wawasan mendalam, dan inspirasi untuk memperkuat diri tanpa perlu mengubah jati diri.",
-    url: "https://zonatenang.com",
+    title: "Hobi dan Minat",
+    description: "Temukan berbagai ide kegiatan mulai dari aktifitas hobi hingga minat yang cocok untuk kalian para kaum introvert sehingga bisa lebih mencintai diri sendiri.",
+    url: "https://zonatenang.com/hobi-dan-minat", // Sesuaikan dengan URL yang sebenarnya
     image: "https://zonatenang.com/og-image.jpg",
     type: "website",
     locale: "id_ID",
@@ -23,7 +20,7 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default function HobiDanMinat() {
   return (
     <>
       <Head>
@@ -36,10 +33,7 @@ export default function Home() {
 
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
+        <meta property="og:description" content={metadata.openGraph.description} />
         <meta property="og:url" content={metadata.openGraph.url} />
         <meta property="og:image" content={metadata.openGraph.image} />
         <meta property="og:site_name" content={metadata.openGraph.site_name} />
@@ -49,14 +43,10 @@ export default function Home() {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.openGraph.title} />
-        <meta
-          name="twitter:description"
-          content={metadata.openGraph.description}
-        />
+        <meta name="twitter:description" content={metadata.openGraph.description} />
         <meta name="twitter:image" content={metadata.openGraph.image} />
 
         <link rel="icon" href="/favicon.png" />
-        <link rel="canonical" href="https://zonatenang.com" /> {/* Meta Canonical */}
 
         {/* Schema Markup untuk Breadcrumb */}
         <script type="application/ld+json">
@@ -70,6 +60,12 @@ export default function Home() {
                   "position": 1,
                   "name": "Home",
                   "item": "https://zonatenang.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Hobi dan Minat",
+                  "item": "https://zonatenang.com/hobi-dan-minat"
                 }
               ]
             }
@@ -77,19 +73,21 @@ export default function Home() {
         </script>
       </Head>
       <main>
-        <section className={styles.postCard}>
-          {posts.map((post) => (
-            <PostCard
-              key={post.id}
-              date={post.date}
-              category={post.category}
-              image={post.image}
-              title={post.title}
-              excerpt={post.excerpt}
-              link={post.link}
-              linkCategory={post.linkCategory}
-            />
-          ))}
+        <section className={Styles.postCard}>
+          {posts
+            .filter(post => post.category === 'Hobi dan Minat') // Memfilter postingan berdasarkan kategori
+            .map(post => (
+              <PostCard
+                key={post.id}
+                date={post.date}
+                category={post.category}
+                image={post.image}
+                title={post.title}
+                excerpt={post.excerpt}
+                link={post.link}
+                linkCategory={post.linkCategory}
+              />
+            ))}
         </section>
       </main>
     </>
