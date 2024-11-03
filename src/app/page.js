@@ -56,7 +56,6 @@ export default function Home() {
         <meta name="twitter:image" content={metadata.openGraph.image} />
 
         <link rel="icon" href="/favicon.png" />
-        <link rel="canonical" href="https://zonatenang.com" /> {/* Meta Canonical */}
 
         {/* Schema Markup untuk Breadcrumb */}
         <script type="application/ld+json">
